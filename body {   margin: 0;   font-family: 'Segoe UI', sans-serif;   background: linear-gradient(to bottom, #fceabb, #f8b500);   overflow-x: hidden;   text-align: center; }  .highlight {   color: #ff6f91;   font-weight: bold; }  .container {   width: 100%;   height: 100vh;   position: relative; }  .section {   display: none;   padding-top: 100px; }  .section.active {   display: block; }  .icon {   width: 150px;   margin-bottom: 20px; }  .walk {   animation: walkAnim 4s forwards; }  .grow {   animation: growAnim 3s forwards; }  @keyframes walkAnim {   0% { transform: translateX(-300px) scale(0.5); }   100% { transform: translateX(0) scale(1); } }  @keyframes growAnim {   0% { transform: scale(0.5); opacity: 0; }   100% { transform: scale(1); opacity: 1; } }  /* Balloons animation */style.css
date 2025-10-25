@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #fceabb, #f8b500);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.highlight {
+  color: #ff6f91;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.section {
+  display: none;
+  padding-top: 100px;
+}
+
+.section.active {
+  display: block;
+}
+
+.icon {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.walk {
+  animation: walkAnim 4s forwards;
+}
+
+.grow {
+  animation: growAnim 3s forwards;
+}
+
+@keyframes walkAnim {
+  0% { transform: translateX(-300px) scale(0.5); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes growAnim {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Balloons animation */
+.balloon {
+  width: 80px;
+  position: absolute;
+  animation: rise 6s infinite;
+}
+
+.balloon:nth-child(2) { animation-delay: 1s; left: 30%; }
+.balloon:nth-child(3) { animation-delay: 2s; left: 60%; }
+
+@keyframes rise {
+  0% { bottom: -100px; }
+  100% { bottom: 600px; }
+}
+
+.text {
+  font-size: 2em;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.pop {
+  animation: popAnim 1s ease forwards;
+}
+
+@keyframes popAnim {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.message {
+  font-size: 1.5em;
+  color: #fff;
+}
+
+#next-level-btn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background: #ff6f91;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  margin-top: 50px;
+}
